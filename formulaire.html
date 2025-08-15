@@ -67,6 +67,10 @@
 <label for="lastname">Nom</label>
 <input id="lastname" required="" type="text"/>
 
+<label for="town">Ville de livraison</label>
+<input id="town" required="" type="text"/>
+
+
 
 <label for="quantity">Quantité</label>
 <input id="quantity" min="1" required="" type="number" value="1" onchange='updateTotal()'/>
@@ -103,9 +107,10 @@
       const quantity = document.getElementById('quantity').value;
       const firstname = document.getElementById('firstname').value;
       const lastname = document.getElementById('lastname').value;
+      const town = document.getElementById('town').value;
       const phone = document.getElementById('phone').value;
 
-      const message = `Bonjour, je souhaite commander :\nProduit : ${product}\nQuantité : ${quantity}\nNom : ${lastname} ${firstname}\nTéléphone : ${phone}\nMerci de me livrer à Dakar.`;
+      const message = `Bonjour, je souhaite commander :\nProduit : ${product}\nQuantité : ${quantity}\nNom : ${lastname} ${firstname}\nTéléphone : ${phone}\nMerci de me livrer à \nl'emplacement : ${town}.`;
       const encodedMessage = encodeURIComponent(message);
       const whatsappNumber = '221710423866';
       window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
